@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MakanAgent SG — Qloo-powered dining picks</title>
+<meta name="description" content="Chat your craving, get Singapore dining picks grounded in Qloo Taste AI. Qloo Agentic Hackathon entry.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🍜 MakanAgent <span>SG · Qloo</span></div>
+  <button class="keybtn" id="keyBtn">🔑 API key</button>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>What are you craving?</h1>
+    <p>An agent grounded in <b>Qloo Taste AI</b> — real cultural taste across cuisines &amp; spots, not generic guesses.</p>
+  </section>
+  <section class="panel" id="keyPanel" hidden>
+    <label>Qloo hackathon API key (stored only in this browser)
+      <input type="password" id="apiKey" placeholder="paste key from Qloo email" autocomplete="off">
+    </label>
+    <div class="row"><button class="btn" id="saveKey">Save key</button><span class="muted" id="keyState"></span></div>
+  </section>
+  <section class="panel">
+    <input type="search" id="craving" placeholder="e.g. spicy halal dinner, quiet vegetarian lunch…">
+    <div class="chips" id="cuisines"></div>
+    <div class="row filters">
+      <label><input type="checkbox" id="fHalal"> Halal-friendly</label>
+      <label><input type="checkbox" id="fVeg"> Vegetarian-friendly</label>
+      <label><input type="checkbox" id="fDemo"> Demo mode (no key)</label>
+    </div>
+    <button class="btn big" id="go">Find my makan →</button>
+    <p class="warn" id="warn" hidden></p>
+  </section>
+  <section class="grid" id="results"></section>
+  <div class="empty" id="empty">Type a craving above 👆 — the agent asks Qloo what matches.</div>
+  <footer>
+    <p>Powered by Qloo Taste AI (hackathon.api.qloo.com). Estimates for demo; venue info via Qloo entities.</p>
+    <p><a href="https://qloo.devpost.com/" target="_blank" rel="noopener">Qloo Agentic Hackathon</a> · MIT · Singapore 🇸🇬</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
